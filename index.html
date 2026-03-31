@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="me">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auttohub Montenegro — Автосервис в Будве | Ремонт и обслуживание</title>
-    <meta name="description"
-        content="Профессиональный автосервис в Будве. Диагностика, ремонт двигателя, тормозов, подвески. 10+ лет опыта. Сертифицированные механики. Работаем со всеми марками.">
+    <title data-t="head.title">Auttohub Montenegro — Autoservis u Budvi | Popravka i održavanje</title>
+    <meta name="description" data-t="head.description"
+        content="Profesionalni autoservis u Budvi. Dijagnostika, popravka motora, kočnica, vješanja. 10+ godina iskustva. Sertifikovani mehaničari. Radimo sa svim markama.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1325,17 +1325,17 @@
 
             <div class="nav-cta">
                 <div class="lang-switcher" id="langSwitcher" onclick="toggleLangDropdown()">
-                    <img src="https://flagcdn.com/ru.svg" alt="RU" class="lang-flag" id="currentLangFlag">
-                    <span id="currentLangText">RU</span>
+                    <img src="https://flagcdn.com/me.svg" alt="ME" class="lang-flag" id="currentLangFlag">
+                    <span id="currentLangText">ME</span>
                     <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
                     <div class="lang-dropdown" id="langDropdown">
-                        <button class="lang-btn active" onclick="changeLanguage('ru')">
-                            <img src="https://flagcdn.com/ru.svg" alt="RU" class="lang-flag">
-                            Русский
-                        </button>
-                        <button class="lang-btn" onclick="changeLanguage('me')">
+                        <button class="lang-btn active" onclick="changeLanguage('me')">
                             <img src="https://flagcdn.com/me.svg" alt="ME" class="lang-flag">
                             Crnogorski
+                        </button>
+                        <button class="lang-btn" onclick="changeLanguage('ru')">
+                            <img src="https://flagcdn.com/ru.svg" alt="RU" class="lang-flag">
+                            Русский
                         </button>
                         <button class="lang-btn" onclick="changeLanguage('en')">
                             <img src="https://flagcdn.com/gb.svg" alt="EN" class="lang-flag">
@@ -1373,8 +1373,8 @@
         <a href="#reviews" onclick="toggleMobileMenu()" data-t="nav.reviews">Отзывы</a>
         <a href="#faq" onclick="toggleMobileMenu()" data-t="nav.faq">FAQ</a>
         <div class="mobile-lang">
-            <button class="mobile-lang-btn active" onclick="changeLanguage('ru')" id="m-lang-ru">RU</button>
-            <button class="mobile-lang-btn" onclick="changeLanguage('me')" id="m-lang-me">ME</button>
+            <button class="mobile-lang-btn active" onclick="changeLanguage('me')" id="m-lang-me">ME</button>
+            <button class="mobile-lang-btn" onclick="changeLanguage('ru')" id="m-lang-ru">RU</button>
             <button class="mobile-lang-btn" onclick="changeLanguage('en')" id="m-lang-en">EN</button>
         </div>
         <a href="tel:+38267245981" class="btn btn-primary" data-t="nav.call">Позвонить</a>
@@ -2056,6 +2056,8 @@
         // Translations
         const translations = {
             ru: {
+                "head.title": "Auttohub Montenegro — Автосервис в Будве | Ремонт и обслуживание",
+                "head.description": "Профессиональный автосервис в Будве. Диагностика, ремонт двигателя, тормозов, подвески. 10+ лет опыта. Сертифицированные механики. Работаем со всеми марками.",
                 "nav.services": "Услуги",
                 "nav.advantages": "Преимущества",
                 "nav.about": "О нас",
@@ -2200,6 +2202,8 @@
                 "footer.brand_text": "Профессиональный автосервис в Будве. Ремонт и обслуживание автомобилей всех марок с 2014 года."
             },
             me: {
+                "head.title": "Auttohub Montenegro — Autoservis u Budvi | Popravka i održavanje",
+                "head.description": "Profesionalni autoservis u Budvi. Dijagnostika, popravka motora, kočnica, vješanja. 10+ godina iskustva. Sertifikovani mehaničari. Radimo sa svim markama.",
                 "nav.services": "Usluge",
                 "nav.advantages": "Prednosti",
                 "nav.about": "O nama",
@@ -2344,6 +2348,8 @@
                 "footer.brand_text": "Profesionalni autoservis u Budvi. Popravka i održavanje vozila svih marki od 2014. godine."
             },
             en: {
+                "head.title": "Auttohub Montenegro — Car Service in Budva | Repair & Maintenance",
+                "head.description": "Professional car service in Budva. Diagnostics, engine repair, brakes, suspension. 10+ years of experience. Certified mechanics. We work with all brands.",
                 "nav.services": "Services",
                 "nav.advantages": "Advantages",
                 "nav.about": "About Us",
@@ -2493,7 +2499,7 @@
         lucide.createIcons();
 
         // Language switching logic
-        let currentLanguage = localStorage.getItem('selectedLanguage') || 'ru';
+        let currentLanguage = 'me'; // Always open in Montenegrin
 
         function toggleLangDropdown() {
             document.getElementById('langSwitcher').classList.toggle('active');
@@ -2542,6 +2548,10 @@
                 if (langData[key]) {
                     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                         el.placeholder = langData[key];
+                    } else if (el.tagName === 'META') {
+                        el.setAttribute('content', langData[key]);
+                    } else if (el.tagName === 'TITLE') {
+                        document.title = langData[key];
                     } else if (el.tagName === 'SELECT') {
                         // handled via options
                     } else {
