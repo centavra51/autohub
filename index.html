@@ -1199,6 +1199,27 @@
             justify-content: center;
         }
 
+        .map-section {
+            width: 100%;
+            height: 450px;
+            background: var(--bg-secondary);
+            position: relative;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(0.5) contrast(1.1) brightness(0.9);
+            transition: filter 0.5s ease;
+        }
+
+        .map-section:hover iframe {
+            filter: grayscale(0) contrast(1) brightness(1);
+        }
+
         /* Responsive */
         @media (min-width: 640px) {
             .services-grid {
@@ -1466,25 +1487,25 @@
                     <div class="service-icon">
                         <i data-lucide="move-vertical" style="width: 28px; height: 28px;"></i>
                     </div>
-                    <h3>Подвеска и рулевое</h3>
-                    <p>Диагностика и ремонт подвески, замена амортизаторов и пружин.</p>
-                    <span class="service-price">от €40</span>
+                    <h3 data-t="services.s4_title">Подвеска и рулевое</h3>
+                    <p data-t="services.s4_desc">Диагностика и ремонт подвески, замена амортизаторов и пружин.</p>
+                    <span class="service-price" data-t="services.s4_price">от €40</span>
                 </div>
                 <div class="service-card animate-on-scroll stagger-2">
                     <div class="service-icon">
                         <i data-lucide="droplets" style="width: 28px; height: 28px;"></i>
                     </div>
-                    <h3>Замена масла и ТО</h3>
-                    <p>Замена моторного масла, фильтров, свечей. Плановое обслуживание.</p>
-                    <span class="service-price">от €30</span>
+                    <h3 data-t="services.s5_title">Замена масла и ТО</h3>
+                    <p data-t="services.s5_desc">Замена моторного масла, фильтров, свечей. Плановое обслуживание.</p>
+                    <span class="service-price" data-t="services.s5_price">от €30</span>
                 </div>
                 <div class="service-card animate-on-scroll stagger-3">
                     <div class="service-icon">
                         <i data-lucide="zap" style="width: 28px; height: 28px;"></i>
                     </div>
-                    <h3>Электрика и электроника</h3>
-                    <p>Ремонт электропроводки, генератора, стартера. Устранение ошибок.</p>
-                    <span class="service-price">от €25</span>
+                    <h3 data-t="services.s6_title">Электрика и электроника</h3>
+                    <p data-t="services.s6_desc">Ремонт электропроводки, генератора, стартера. Устранение ошибок.</p>
+                    <span class="service-price" data-t="services.s6_price">от €25</span>
                 </div>
             </div>
         </div>
@@ -1570,10 +1591,10 @@
             <div class="about-content">
                 <div class="about-image animate-on-scroll">
                     <img src="images/mechanic-portrait.jpg" alt="Наша команда">
-                    <div class="about-badge">С 2014 года</div>
+                    <div class="about-badge" data-t="about.since">С 2014 года</div>
                 </div>
                 <div class="about-text">
-                    <h2 class="animate-on-scroll" data-t="about.title">Auttohub — это <span>команда
+                    <h2 class="animate-on-scroll" data-t="about.title">Autohub — это <span>команда
                             профессионалов</span></h2>
                     <p class="animate-on-scroll stagger-1" data-t="about.desc">Мы начали с небольшой мастерской в 2014
                         году и выросли в один из самых надёжных автосервисов Будвы. Наша цель проста: делать
@@ -1598,7 +1619,7 @@
                     </div>
                     <a href="tel:+38267245981" class="btn btn-primary animate-on-scroll stagger-3">
                         <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
-                        +382 67 245 981
+                        <span data-t="about.call_btn">+382 67 245 981</span>
                     </a>
                 </div>
             </div>
@@ -1824,7 +1845,7 @@
     <section class="section faq" id="faq">
         <div class="container">
             <div class="section-header">
-                <span class="section-label animate-on-scroll">FAQ</span>
+                <span class="section-label animate-on-scroll" data-t="faq.label">FAQ</span>
                 <h2 class="section-title animate-on-scroll stagger-1" data-t="faq.title">Часто задаваемые вопросы</h2>
                 <p class="section-subtitle animate-on-scroll stagger-2" data-t="faq.subtitle">Ответы на популярные
                     вопросы наших клиентов</p>
@@ -1866,22 +1887,22 @@
                 </div>
                 <div class="faq-item animate-on-scroll stagger-1">
                     <button class="faq-question" onclick="toggleFaq(this)">
-                        Можно ли привезти свои запчасти?
+                        <span data-t="faq.q4">Можно ли привезти свои запчасти?</span>
                         <i data-lucide="chevron-down" style="width: 24px; height: 24px;"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Да, вы можете привезти свои запчасти. Однако мы рекомендуем покупать запчасти через нас — мы
+                        <p data-t="faq.a4">Да, вы можете привезти свои запчасти. Однако мы рекомендуем покупать запчасти через нас — мы
                             работаем с проверенными поставщиками и даём гарантию на оригинальные детали. Если вы
                             привозите свои запчасти, гарантия на них не распространяется.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll stagger-2">
                     <button class="faq-question" onclick="toggleFaq(this)">
-                        Есть ли эвакуатор и помощь на дороге?
+                        <span data-t="faq.q5">Есть ли эвакуатор и помощь на дороге?</span>
                         <i data-lucide="chevron-down" style="width: 24px; height: 24px;"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Да, мы предоставляем услуги эвакуации и технической помощи на дороге. Если ваш автомобиль
+                        <p data-t="faq.a5">Да, мы предоставляем услуги эвакуации и технической помощи на дороге. Если ваш автомобиль
                             сломался в радиусе 30 км от Будвы — мы приедем и поможем. В некоторых случаях ремонт можно
                             выполнить на месте, иначе эвакуируем автомобиль в сервис.</p>
                     </div>
@@ -1937,12 +1958,27 @@
         </div>
     </section>
 
+    <div class="container" style="margin-bottom: 2rem;">
+        <div class="section-header" style="text-align: center; margin-bottom: 0;">
+            <span class="section-label animate-on-scroll" data-t="location.label">Локация</span>
+            <h2 class="section-title animate-on-scroll stagger-1" data-t="location.title">Наш сервис в Баре</h2>
+        </div>
+    </div>
+    <section class="map-section" id="location">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23648.40149023023!2d19.07843054178553!3d42.10515155694291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134e0a4f5f8a002b%3A0xc47e3a9f0fa90f1e!2sBar%2C%20Montenegro!5e0!3m2!1sen!2s!4v1711800000000!5m2!1sen!2s" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="logo_monolith.svg" Autohub Montenegro" style="height: 80px; width: auto;">
+                    <img src="logo_monolith.svg" alt="Autohub Montenegro" style="height: 80px; width: auto;">
                     <p data-t="footer.brand_text">Профессиональный автосервис в Будве. Ремонт и обслуживание автомобилей
                         всех марок с 2014 года.</p>
                     <div class="footer-social">
@@ -1965,26 +2001,26 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h4>Услуги</h4>
+                    <h4 data-t="footer.services">Услуги</h4>
                     <ul>
-                        <li><a href="#services">Диагностика</a></li>
-                        <li><a href="#services">Механический ремонт</a></li>
-                        <li><a href="#services">Тормозная система</a></li>
-                        <li><a href="#services">Подвеска</a></li>
-                        <li><a href="#services">Замена масла</a></li>
+                        <li><a href="#services" data-t="footer.s1">Диагностика</a></li>
+                        <li><a href="#services" data-t="footer.s2">Механический ремонт</a></li>
+                        <li><a href="#services" data-t="footer.s3">Тормозная система</a></li>
+                        <li><a href="#services" data-t="footer.s4">Подвеска</a></li>
+                        <li><a href="#services" data-t="footer.s5">Замена масла</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Компания</h4>
+                    <h4 data-t="footer.company">Компания</h4>
                     <ul>
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#reviews">Отзывы</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#advantages">Преимущества</a></li>
+                        <li><a href="#about" data-t="footer.c1">О нас</a></li>
+                        <li><a href="#reviews" data-t="footer.c2">Отзывы</a></li>
+                        <li><a href="#faq" data-t="footer.c3">FAQ</a></li>
+                        <li><a href="#advantages" data-t="footer.c4">Преимущества</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h4>Контакты</h4>
+                    <h4 data-t="footer.contacts">Контакты</h4>
                     <div class="footer-contact-item">
                         <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
                         <span>Jadranski Put bb, 85310 Budva, Montenegro</span>
@@ -1999,12 +2035,12 @@
                     </div>
                     <div class="footer-contact-item">
                         <i data-lucide="clock" style="width: 18px; height: 18px;"></i>
-                        <span>Пн-Пт: 8:00-18:00, Сб: 9:00-14:00</span>
+                        <span><span data-t="footer.mon-fri">Пн-Пт</span>: 8:00-18:00, <span data-t="footer.sat">Сб</span>: 9:00-14:00</span>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Autohub Montenegro. Все права защищены.</p>
+                <p>&copy; 2024 Autohub Montenegro. <span data-t="footer.copyright">Все права защищены.</span></p>
             </div>
         </div>
     </footer>
@@ -2056,6 +2092,8 @@
                 "advantages.a1_title": "Быстрая диагностика",
                 "advantages.a1_desc": "Определяем проблему за 15 минут с помощью современного оборудования.",
                 "advantages.a2_title": "Сертифицированные механики",
+                "location.label": "Локация",
+                "location.title": "Как нас найти в Баре",
                 "process.label": "Как мы работаем",
                 "process.title": "Путь к исправному авто",
                 "process.subtitle": "Прозрачность и качество на каждом этапе ремонта",
@@ -2128,6 +2166,37 @@
                 "cta.subtitle": "Позвоните сейчас или приезжайте на бесплатную диагностику",
                 "cta.btn_call": "Позвонить сейчас",
                 "cta.btn_book": "Записаться онлайн",
+                "about.since": "С 2014 года",
+                "about.call_btn": "+382 67 245 981",
+                "services.s4_title": "Подвеска и рулевое",
+                "services.s4_desc": "Диагностика и ремонт подвески, замена амортизаторов и пружин.",
+                "services.s4_price": "от €40",
+                "services.s5_title": "Замена масла и ТО",
+                "services.s5_desc": "Замена моторного масла, фильтров, свечей. Плановое обслуживание.",
+                "services.s5_price": "от €30",
+                "services.s6_title": "Электрика и электроника",
+                "services.s6_desc": "Ремонт электропроводки, генератора, стартера. Устранение ошибок.",
+                "services.s6_price": "от €25",
+                "faq.label": "FAQ",
+                "faq.q4": "Можно ли привезти свои запчасти?",
+                "faq.a4": "Да, вы можете привезти свои запчасти. Однако мы рекомендуем покупать запчасти через нас — мы работаем с проверенными поставщиками и даём гарантию на оригинальные детали.",
+                "faq.q5": "Есть ли эвакуатор и помощь на дороге?",
+                "faq.a5": "Да, мы предоставляем услуги эвакуации и технической помощи на дороге. Если ваш автомобиль сломался в радиусе 30 км от Будвы — мы приедем и поможем.",
+                "footer.services": "Услуги",
+                "footer.company": "Компания",
+                "footer.contacts": "Контакты",
+                "footer.mon-fri": "Пн-Пт",
+                "footer.sat": "Сб",
+                "footer.copyright": "Все права защищены.",
+                "footer.s1": "Диагностика",
+                "footer.s2": "Механический ремонт",
+                "footer.s3": "Тормозная система",
+                "footer.s4": "Подвеска",
+                "footer.s5": "Замена масла",
+                "footer.c1": "О нас",
+                "footer.c2": "Отзывы",
+                "footer.c3": "FAQ",
+                "footer.c4": "Преимущества",
                 "footer.brand_text": "Профессиональный автосервис в Будве. Ремонт и обслуживание автомобилей всех марок с 2014 года."
             },
             me: {
@@ -2167,6 +2236,8 @@
                 "advantages.a1_title": "Brza dijagnostika",
                 "advantages.a1_desc": "Utvrđujemo problem za 15 minuta pomoću moderne opreme.",
                 "advantages.a2_title": "Sertifikovani mehaničari",
+                "location.label": "Lokacija",
+                "location.title": "Kako nas naći u Baru",
                 "process.label": "Kako radimo",
                 "process.title": "Put do ispravnog auta",
                 "process.subtitle": "Transparentnost i kvalitet u svakoj fazi popravke",
@@ -2239,6 +2310,37 @@
                 "cta.subtitle": "Pozovite odmah ili dođite na besplatnu dijagnostiku",
                 "cta.btn_call": "Pozovite odmah",
                 "cta.btn_book": "Zakažite online",
+                "about.since": "Od 2014. godine",
+                "about.call_btn": "+382 67 245 981",
+                "services.s4_title": "Vješanje i upravljanje",
+                "services.s4_desc": "Dijagnostika i popravka vješanja, zamjena amortizera i opruga.",
+                "services.s4_price": "od €40",
+                "services.s5_title": "Zamjena ulja i servis",
+                "services.s5_desc": "Zamjena motornog ulja, filtera, svjećica. Redovno održavanje.",
+                "services.s5_price": "od €30",
+                "services.s6_title": "Elektrika i elektronika",
+                "services.s6_desc": "Popravka elektroinstalacija, alternatora, startera. Brisanje grešaka.",
+                "services.s6_price": "od €25",
+                "faq.label": "FAQ",
+                "faq.q4": "Mogu li donijeti svoje djelove?",
+                "faq.a4": "Da, možete donijeti svoje djelove. Ipak, preporučujemo kupovinu preko nas — radimo sa provjerenim dobavljačima i dajemo garanciju na originale.",
+                "faq.q5": "Postoji li šlep služba i pomoć na putu?",
+                "faq.a5": "Da, pružamo usluge šlepanja i tehničke pomoći na putu u krugu od 30 km od Budve.",
+                "footer.services": "Usluge",
+                "footer.company": "Kompanija",
+                "footer.contacts": "Kontakti",
+                "footer.mon-fri": "Pon-Pet",
+                "footer.sat": "Sub",
+                "footer.copyright": "Sva prava zadržana.",
+                "footer.s1": "Dijagnostika",
+                "footer.s2": "Mehaničke popravke",
+                "footer.s3": "Kočioni sistem",
+                "footer.s4": "Vješanje",
+                "footer.s5": "Zamjena ulja",
+                "footer.c1": "O nama",
+                "footer.c2": "Utisci",
+                "footer.c3": "FAQ",
+                "footer.c4": "Prednosti",
                 "footer.brand_text": "Profesionalni autoservis u Budvi. Popravka i održavanje vozila svih marki od 2014. godine."
             },
             en: {
@@ -2278,6 +2380,8 @@
                 "advantages.a1_title": "Quick Diagnostics",
                 "advantages.a1_desc": "We identify the problem in 15 minutes using modern equipment.",
                 "advantages.a2_title": "Certified Mechanics",
+                "location.label": "Location",
+                "location.title": "How to find us in Bar",
                 "process.label": "Our Process",
                 "process.title": "The Way to a Healthy Car",
                 "process.subtitle": "Transparency and quality at every stage of repair",
@@ -2350,6 +2454,37 @@
                 "cta.subtitle": "Call now or come for a free diagnostics",
                 "cta.btn_call": "Call Now",
                 "cta.btn_book": "Book Online",
+                "about.since": "Since 2014",
+                "about.call_btn": "+382 67 245 981",
+                "services.s4_title": "Suspension & Steering",
+                "services.s4_desc": "Suspension diagnostics and repair, replacement of shock absorbers and springs.",
+                "services.s4_price": "from €40",
+                "services.s5_title": "Oil Change & Service",
+                "services.s5_desc": "Engine oil and filter change, spark plug replacement. Scheduled maintenance.",
+                "services.s5_price": "from €30",
+                "services.s6_title": "Electrical & Electronics",
+                "services.s6_desc": "Repair of electrical wiring, generator, and starter. Error code clearing.",
+                "services.s6_price": "from €25",
+                "faq.label": "FAQ",
+                "faq.q4": "Can I bring my own parts?",
+                "faq.a4": "Yes, you can bring your own parts. However, we recommend purchasing through us — we work with trusted suppliers and provide a warranty.",
+                "faq.q5": "Is there a tow truck and roadside assistance?",
+                "faq.a5": "Yes, we provide towing and technical assistance on the road within a 30 km radius of Budva.",
+                "footer.services": "Services",
+                "footer.company": "Company",
+                "footer.contacts": "Contacts",
+                "footer.mon-fri": "Mon-Fri",
+                "footer.sat": "Sat",
+                "footer.copyright": "All rights reserved.",
+                "footer.s1": "Diagnostics",
+                "footer.s2": "Mechanical Repair",
+                "footer.s3": "Brake System",
+                "footer.s4": "Suspension",
+                "footer.s5": "Oil Change",
+                "footer.c1": "About Us",
+                "footer.c2": "Reviews",
+                "footer.c3": "FAQ",
+                "footer.c4": "Advantages",
                 "footer.brand_text": "Professional car service in Budva. Repair and maintenance since 2014."
             }
         };
